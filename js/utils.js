@@ -2,7 +2,7 @@
 
 // 이 URL은 Google Apps Script의 배포 URL입니다.
 // 게시물 목록과 방명록 기능을 사용하려면 이 값을 자신의 Apps Script URL로 변경해야 합니다.
-export const APPS_SCRIPT_URL = 'YOUR_URL'; // IMPROVEMENT: 중앙 집중화된 Apps Script URL
+export const APPS_SCRIPT_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLg1bGYymFT55EFeMVOFnbfeMwC_flc1lYORU4fuJfNwo9oJ87L1-QCht8m-S2lSLeoH5hic8es38pBOM2Kmvl3oS2UHYPtmrpDC7NHzZ_VEIKd3cwxbWIV-9ERgdmnjsCN9IZY1pOoQqp9beMt4UlxNGNyi7wU2EE-l32X3-i_wo1FS7TQO-5_APuCL60NRTliR_SswAHwKlhgEZKAua8KS8DKZddXdtnWWkcyWZxxNu79CXEH3vB9f4HY_81-uq1-4a3P5N95CZhBzyCk1b6-knd_z5eSCV3IUqU-L&lib=MmaGOKZ0TdP6CuOdBtqWLfv0B9NIHDmww'; // IMPROVEMENT: 중앙 집중화된 Apps Script URL
 const LIKED_POSTS_STORAGE_KEY = 'myWebsiteLikedPosts'; // 좋아요 누른 게시물 ID를 저장할 로컬 스토리지 키
 
 /**
@@ -64,13 +64,13 @@ function isValidLocalHtmlFileName(fileName) {
  */
 export function getEmbedURL(type, id) {
     let embedSrc = ''; // 임베드할 URL을 저장할 변수
-    
+
     // ID가 유효한지 1차 검증
     if (!id) {
         console.warn('getEmbedURL: ID is null or empty for type:', type);
         return '';
     }
-    
+
     switch (type.toLowerCase()) { // 게시물 타입을 소문자로 변환하여 비교합니다.
         case 'docs': // Google Docs (문서)
         case 'slide': // Google Slides (프레젠테이션)
